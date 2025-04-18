@@ -1,0 +1,30 @@
+
+
+models:
+  - name: obt_billing_transactions
+    description: "OBT for Billing & Revenue Analysis, joining billing fact with all relevant dimensions"
+    columns:
+      - name: billing_transaction_id
+        description: "Surrogate key for each billing event"
+        tests: [not_null, unique]
+
+      - name: account_key
+        description: "Surrogate key from dim_accounts"
+
+      - name: plan_key
+        description: "Surrogate key from dim_plans"
+
+      - name: billing_date
+        description: "Date the billing occurred, mapped to date dimension"
+
+      - name: ab_billed_amount
+        description: "Amount billed in this transaction"
+
+      - name: refund_status
+        description: "Refund status (placeholder/null)"
+
+      - name: plan_status
+        description: "Status of the plan (placeholder/null)"
+
+      - name: billing_status
+        description: "Billing success/failure (placeholder/null)"
