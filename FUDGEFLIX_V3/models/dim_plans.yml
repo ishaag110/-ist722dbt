@@ -1,0 +1,20 @@
+models:
+  - name: dim_plans
+    description: "Subscription plan dimension from ff_plans"
+    columns:
+      - name: plan_key
+        description: "Surrogate key for plan"
+        tests: [not_null, unique]
+
+      - name: plan_id
+        description: "Natural key for the plan"
+        tests: [not_null]
+
+      - name: plan_name
+        description: "Name of the subscription plan"
+
+      - name: plan_price
+        description: "Price of the plan"
+
+      - name: plan_current
+        description: "Boolean flag indicating if plan is current"

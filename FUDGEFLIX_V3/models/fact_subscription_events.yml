@@ -1,0 +1,9 @@
+models:
+  - name: obt_subscription_events
+    description: "OBT for Subscription Analysis, joining fact with all dimensions"
+    columns:
+      - name: subscription_event_id
+        tests: [not_null, unique]
+      - name: account_key
+      - name: plan_key
+      - name: subscription_date

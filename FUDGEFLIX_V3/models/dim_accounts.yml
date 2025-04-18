@@ -1,0 +1,20 @@
+models:
+  - name: dim_accounts
+    description: "Account dimension from ff_accounts"
+    columns:
+      - name: account_key
+        description: "Surrogate key for account"
+        tests: [not_null, unique]
+
+      - name: account_id
+        description: "Natural key for the account"
+        tests: [not_null]
+
+      - name: account_email
+        description: "Email of the account"
+
+      - name: account_zipcode
+        description: "Zipcode associated with the account"
+
+      - name: account_plan_id
+        description: "Current plan assigned to the account"
