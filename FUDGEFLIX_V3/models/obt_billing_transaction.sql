@@ -1,7 +1,7 @@
 
 
 with f_billing as (
-    select * from {{ ref('fact_billing_transactions') }}
+    select * from {{ ref('fact_billing_transaction') }}
 ),
 
 d_account as (

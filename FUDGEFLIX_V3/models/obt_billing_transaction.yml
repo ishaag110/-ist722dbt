@@ -1,7 +1,7 @@
 
 
 models:
-  - name: obt_billing_transactions
+  - name: obt_billing_transaction
     description: "OBT for Billing & Revenue Analysis, joining billing fact with all relevant dimensions"
     columns:
       - name: billing_transaction_id
