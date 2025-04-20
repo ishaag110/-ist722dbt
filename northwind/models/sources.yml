@@ -11,7 +11,8 @@ sources:
           - name: DateKey
             tests:
               - unique
-  name: northwind
+
+  - name: northwind
     database: raw
     schema: northwind
 
@@ -21,41 +22,46 @@ sources:
           - name: CustomerId
             tests:
               - unique
+
       - name: Products
         columns:
           - name: ProductId
             tests:
-              - unique        
+              - unique
+
       - name: Suppliers
         columns:
           - name: SupplierId
             tests:
-              - unique        
+              - unique
+
       - name: Categories
         columns:
           - name: CategoryId
             tests:
               - unique
+
       - name: Employees
         columns:
           - name: EmployeeId
             tests:
               - unique
-      - name: Shippers
-      columns:
-         - name: ShipperID
-         tests:
-          - unique      
-    - name: Orders
-    columns:
-      - name: OrderId
-      tests:
-        - unique                                                  
-    - name: Order_Details
-    tests:
-       - dbt_utils.unique_combination_of_columns:
-            combination_of_columns:
-              - OrderId
-              - ProductId
-    
 
+      - name: Shippers
+        columns:
+          - name: ShipperID
+            tests:
+              - unique
+
+      - name: Orders
+        columns:
+          - name: OrderId
+            tests:
+              - unique
+
+      - name: Order_Details
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - OrderId
+                - ProductId
