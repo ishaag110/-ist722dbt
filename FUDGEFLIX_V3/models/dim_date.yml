@@ -1,0 +1,25 @@
+models:
+  - name: dim_date
+    description: "Date dimension from generated calendar spine"
+    columns:
+      - name: date
+        description: "Calendar date"
+        tests: [not_null, unique]
+
+      - name: year
+        description: "Year portion of the date"
+
+      - name: month
+        description: "Month number"
+
+      - name: day
+        description: "Day of the month"
+
+      - name: weekday
+        description: "Day of the week (numeric)"
+
+      - name: day_name
+        description: "Name of the day"
+
+      - name: month_name
+        description: "Name of the month"

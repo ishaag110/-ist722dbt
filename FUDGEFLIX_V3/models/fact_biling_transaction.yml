@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: fact_billing_transactions
+    description: "Fact table capturing individual billing transactions, joined with account and plan dimensions"
+    columns:
+      - name: billing_transaction_id
+        description: "Surrogate key for the billing transaction"
+        tests: [not_null, unique]
+
+      - name: account_key
+        description: "Foreign key to dim_accounts"
+        tests: [not_null]
+
+      - name: plan_key
+        description: "Foreign key to dim_plans"
+        tests: [not_null]
+
+      - name: billing_date
+        description: "The date on which billing occurred"
+
+      - name: ab_billed_amount
+        description: "The amount that was billed"
+
+      - name: refund_status
+        description: "Whether the billed amount was refunded (currently null)"
+
+      - name: billing_status
+        description: "Success/Failed/Pending status of the billing (currently null)"
+
+      - name: plan_status
+        description: "Status of the plan at billing time (currently null)"
